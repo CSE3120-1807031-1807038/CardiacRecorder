@@ -49,7 +49,6 @@
             android:id="@+id/enter_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="92dp"
             android:text="Enter"
             android:textAllCaps="false"
             android:textColor="#090909"
@@ -59,8 +58,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-            app:layout_constraintVertical_bias="0.878" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintVertical_bias="0.698" />
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
@@ -79,8 +78,7 @@
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165"
-            />
+            app:layout_constraintVertical_bias="0.091" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
@@ -114,10 +112,25 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-            app:layout_constraintVertical_bias="0.129" />
+            app:layout_constraintVertical_bias="0.088" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="202dp"
+            android:layout_height="96dp"
+            android:background="#DAC9C9"
+            android:ems="10"
+            android:hint="Comment"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+            app:layout_constraintVertical_bias="0.146" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
