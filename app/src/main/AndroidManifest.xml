@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CardiacRecorder">
         <activity
+            android:name=".StartingPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Starting_page"
+            android:exported="false" />
+        <activity
             android:name=".Detailed_info_page"
             android:exported="false" />
         <activity
