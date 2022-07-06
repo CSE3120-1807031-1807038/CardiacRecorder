@@ -34,7 +34,7 @@
         android:textIsSelectable="false"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:backgroundTint="#DCEDFF"
+        app:backgroundTint="#184F8A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
