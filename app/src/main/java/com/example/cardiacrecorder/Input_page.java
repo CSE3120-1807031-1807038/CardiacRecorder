@@ -7,17 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    Button Add_new_record;
+public class Input_page extends AppCompatActivity {
+    Button Enter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Add_new_record = findViewById(R.id.add_button);
-        Add_new_record.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_input_page);
+        Enter = findViewById(R.id.enter_btn);
+        Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Input_page.class));
+                startActivity(new Intent(getApplicationContext(),Detailed_info_page.class));
             }
         });
     }

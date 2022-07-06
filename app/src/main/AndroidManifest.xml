@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CardiacRecorder">
+        <activity
+            android:name=".Detailed_info_page"
+            android:exported="false" />
+        <activity
+            android:name=".Input_page"
+            android:exported="false" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
