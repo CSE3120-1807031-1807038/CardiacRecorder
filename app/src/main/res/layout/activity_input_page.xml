@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#343F3E"
     android:textAlignment="center"
-    tools:context=".Input_page">
+    tools:context=".Input_page"
+    >
 
     <ImageView
         android:id="@+id/imageView2"
@@ -37,13 +38,14 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="348dp"
         android:layout_height="457dp"
-        android:background="#DCEDFF"
+        android:background="@drawable/corners"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.306">
+        app:layout_constraintVertical_bias="0.306"
+        >
 
         <Button
             android:id="@+id/enter_btn"
