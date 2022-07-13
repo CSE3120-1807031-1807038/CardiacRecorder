@@ -60,11 +60,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/Comment"
             app:layout_constraintVertical_bias="0.698" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/SP"
             android:layout_width="209dp"
             android:layout_height="51dp"
             android:background="#DAC9C9"
@@ -83,7 +83,7 @@
             app:layout_constraintVertical_bias="0.091" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/DP"
             android:layout_width="209dp"
             android:layout_height="51dp"
             android:background="#DAC9C9"
@@ -97,11 +97,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/SP"
             app:layout_constraintVertical_bias="0.097" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/HeartRate"
             android:layout_width="209dp"
             android:layout_height="51dp"
             android:background="#DAC9C9"
@@ -116,11 +116,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+            app:layout_constraintTop_toBottomOf="@+id/DP"
             app:layout_constraintVertical_bias="0.088" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/Comment"
             android:layout_width="202dp"
             android:layout_height="96dp"
             android:background="#DAC9C9"
@@ -131,7 +131,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+            app:layout_constraintTop_toBottomOf="@+id/HeartRate"
             app:layout_constraintVertical_bias="0.146" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
