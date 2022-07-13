@@ -59,14 +59,15 @@
             app:backgroundTint="#94B0DA"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.746"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Comment"
-            app:layout_constraintVertical_bias="0.698" />
+            app:layout_constraintVertical_bias="0.604" />
 
         <EditText
             android:id="@+id/SP"
-            android:layout_width="209dp"
-            android:layout_height="51dp"
+            android:layout_width="211dp"
+            android:layout_height="39dp"
             android:background="#DAC9C9"
             android:ems="10"
             android:hint="Systollic Pressure in mm hg"
@@ -80,12 +81,12 @@
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.091" />
+            app:layout_constraintVertical_bias="0.059" />
 
         <EditText
             android:id="@+id/DP"
-            android:layout_width="209dp"
-            android:layout_height="51dp"
+            android:layout_width="211dp"
+            android:layout_height="39dp"
             android:background="#DAC9C9"
             android:ems="10"
             android:hint="Diastolic Pressure in mm Hg"
@@ -98,12 +99,12 @@
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SP"
-            app:layout_constraintVertical_bias="0.097" />
+            app:layout_constraintVertical_bias="0.045" />
 
         <EditText
             android:id="@+id/HeartRate"
-            android:layout_width="209dp"
-            android:layout_height="51dp"
+            android:layout_width="211dp"
+            android:layout_height="39dp"
             android:background="#DAC9C9"
             android:ems="10"
             android:hint="Heart rate in bit per minute"
@@ -114,15 +115,14 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DP"
-            app:layout_constraintVertical_bias="0.088" />
+            app:layout_constraintVertical_bias="0.05" />
 
         <EditText
             android:id="@+id/Comment"
-            android:layout_width="202dp"
-            android:layout_height="96dp"
+            android:layout_width="203dp"
+            android:layout_height="67dp"
             android:background="#DAC9C9"
             android:ems="10"
             android:hint="Comment"
@@ -130,9 +130,45 @@
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTime"
+            app:layout_constraintVertical_bias="0.276" />
+
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="211dp"
+            android:layout_height="39dp"
+            android:background="#DAC9C9"
+            android:ems="10"
+            android:hint="Insert date(dd-mm-yy)"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="#493F3F"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HeartRate"
-            app:layout_constraintVertical_bias="0.146" />
+            app:layout_constraintVertical_bias="0.044" />
+
+        <EditText
+            android:id="@+id/editTime"
+            android:layout_width="211dp"
+            android:layout_height="39dp"
+            android:background="#DAC9C9"
+            android:ems="10"
+            android:hint="Insert time(ie.10.30pm)"
+            android:inputType="time"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editDate"
+            app:layout_constraintVertical_bias="0.086" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
