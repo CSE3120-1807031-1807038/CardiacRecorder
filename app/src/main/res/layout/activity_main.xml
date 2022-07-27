@@ -71,7 +71,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
 
-            android:id="@+id/information"
+            android:id="@+id/recyclerview_mainpage"
             android:layout_width="333dp"
             android:layout_height="390dp"
             android:background="@drawable/corners"

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,7 +28,7 @@ public class Input_page extends AppCompatActivity {
     EditText date_in;
     EditText time_in;
     Button Enter;
-    DatabaseReference database_values;
+    Database DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,21 +41,9 @@ public class Input_page extends AppCompatActivity {
         Enter = findViewById(R.id.enter_btn);
         date_in = findViewById(R.id.editDate);
         time_in = findViewById(R.id.editTime);
-//        date_in.setInputType(InputType.TYPE_NULL);
-//        time_in.setInputType(InputType.TYPE_NULL);
-        database_values = FirebaseDatabase.getInstance().getReference("All values");
-//        date_in.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showDateDialog(date_in);
-//            }
-//        });
-//        time_in.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showTimeDialog(time_in);
-//            }
-//        });
+
+        DB = new Database(this);
+
         Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,41 +53,19 @@ public class Input_page extends AppCompatActivity {
                 String comment = Comment.getText().toString();
                 String date =date_in.getText().toString();
                 String time=time_in.getText().toString();
-                Values values = new Values(SP,DP,HeartRate,comment,date,time);
-                database_values.push().setValue(values);
+                Boolean checkinsertdata = DB.insert_user_data(SP,DP,HeartRate,comment,date,time);
+                if(checkinsertdata == true){
+                    Toast.makeText(Input_page.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Input_page.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                }
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
 
         });
     }
 
-//    private void showTimeDialog(final EditText time_in) {
-//        final Calendar calendar=Calendar.getInstance();
-//        TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
-//            @Override
-//            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//                calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
-//                calendar.set(Calendar.MINUTE,minute);
-//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-//                time_in.setText(simpleDateFormat.format(calendar.getTime()));
-//            }
-//        };
-//        new TimePickerDialog(Input_page.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
-//    }
-//
-//    private void showDateDialog(final EditText date_in){
-//        final Calendar calendar =Calendar.getInstance();
-//        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                 calendar.set(Calendar.YEAR,year);
-//                 calendar.set(Calendar.MONTH,month);
-//                 calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-//                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd");
-//                date_in.setText(simpleDateFormat.format(calendar.getTime()));
-//            }
-//        };
-//        new DatePickerDialog(Input_page.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
-//    }
+
 
 }
