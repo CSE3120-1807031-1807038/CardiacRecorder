@@ -5,14 +5,16 @@ public class Values {
     String d_pressure;
     String heart_rate;
     String comment;
-
+    String date;
+    String time;
     public Values(){}
-
-    public Values(String s_pressure, String d_pressure, String heart_rate, String comment) {
+    public Values(String s_pressure, String d_pressure, String heart_rate, String comment, String date, String time) {
         this.s_pressure = s_pressure;
         this.d_pressure = d_pressure;
-        this.heart_rate= heart_rate;
+        this.heart_rate = heart_rate;
         this.comment = comment;
+        this.date = date;
+        this.time = time;
     }
 
     public String getS_pressure() {
@@ -45,5 +47,21 @@ public class Values {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
