@@ -1,18 +1,41 @@
 package com.example.cardiacrecorder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     Button Add_new_record;
+    RecyclerView recyclerView;
+    ArrayList<String> sp,dp,bpm,date,time,comment;
+    Database DB;
+    MyAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DB = new Database(this);
+        sp = new ArrayList<>();
+        dp = new ArrayList<>();
+        bpm = new ArrayList<>();
+        date = new ArrayList<>();
+        time = new ArrayList<>();
+        comment = new ArrayList<>();
+        recyclerView = findViewById(R.id.recyclerview_mainpage);
+        adapter = new MyAdapter(this,sp,dp,bpm,date,time,comment);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        displaydata();
         Add_new_record = findViewById(R.id.add_button);
         Add_new_record.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -20,5 +43,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Input_page.class));
             }
         });
+    }
+
+    private void displaydata() {
+        Cursor cursor = DB.getdata();
+        while(cursor.moveToNext()){
+            sp.add(cursor.getString(0));
+            dp.add(cursor.getString(1));
+            bpm.add(cursor.getString(2));
+            date.add(cursor.getString(3));
+            time.add(cursor.getString(4));
+            comment.add(cursor.getString(5));
+
+        }
     }
 }
