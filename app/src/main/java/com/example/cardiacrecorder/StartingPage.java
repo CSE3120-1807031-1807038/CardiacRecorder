@@ -12,6 +12,8 @@ import android.widget.Toast;
 public class StartingPage extends AppCompatActivity {
     ConstraintLayout Layout;
     Database DB;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -66,6 +66,13 @@ public class Values {
         this.time = time;
     }
 
+    /**
+     * Compares two values by comparing their contents
+     * @param values
+     * values to compare with
+     * @return
+     * returns 0 if two values are same, -1 if not
+     */
     public int compareTo(Values values) {
         if(this.s_pressure.compareTo(values.s_pressure)==0){
             if(this.d_pressure.compareTo(values.d_pressure)==0){

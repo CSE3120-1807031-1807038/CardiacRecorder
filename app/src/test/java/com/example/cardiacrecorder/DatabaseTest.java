@@ -15,10 +15,17 @@ public class DatabaseTest {
 
     String sp,dp,heart_rate,date,time,comment;
     Database database;
+
+    /**
+     * Sets up a new database connection
+     */
     public void setUp(){
         database = new Database(RuntimeEnvironment.application);
     }
 
+    /**
+     * tests inserting mock value into the database and checks
+     */
     @Test
     public void insert_user_data() {
         setUp();
@@ -35,6 +42,9 @@ public class DatabaseTest {
         database.close();
     }
 
+    /**
+     * Tests if deleting function works as intended
+     */
     @Test
     public void testDelete() {
         setUp();
@@ -53,6 +63,9 @@ public class DatabaseTest {
         database.close();
     }
 
+    /**
+     * Tests if updating function works as intended
+     */
     @Test
     public void testUpdate() {
         setUp();

@@ -13,6 +13,9 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * main activity class
+ */
 public class MainActivity extends AppCompatActivity {
     Button Add_new_record;
     RecyclerView recyclerView;
@@ -20,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     Database DB;
     MyAdapter adapter;
 
+    /**
+     * this method will add fragment using recyclerview
+     * @param savedInstanceState
+     * takes a bundle type parameter
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Saves all the data retrieved from database to view
+     */
     private void displaydata() {
         Cursor cursor = DB.getdata();
         while(cursor.moveToNext()){
