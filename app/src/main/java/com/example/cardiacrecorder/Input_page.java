@@ -53,7 +53,7 @@ public class Input_page extends AppCompatActivity {
                 String comment = Comment.getText().toString();
                 String date =date_in.getText().toString();
                 String time=time_in.getText().toString();
-                Boolean checkinsertdata = DB.insert_user_data(SP,DP,HeartRate,comment,date,time);
+                Boolean checkinsertdata = DB.insert_user_data(SP,DP,HeartRate,date,time,comment);
                 if(checkinsertdata == true){
                     Toast.makeText(Input_page.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
                 }

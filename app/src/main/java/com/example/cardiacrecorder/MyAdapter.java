@@ -10,15 +10,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
-    List<Values> valuesList;
+    private ArrayList sp_id,dp_id,bpm_id,date_id,time_id;
 
-    public MyAdapter(Context context, List<Values> valuesList) {
+    public MyAdapter(Context context, ArrayList sp_id, ArrayList dp_id, ArrayList bpm_id, ArrayList date_id, ArrayList time_id) {
         this.context = context;
-        this.valuesList = valuesList;
+        this.sp_id = sp_id;
+        this.dp_id = dp_id;
+        this.bpm_id = bpm_id;
+        this.date_id = date_id;
+        this.time_id = time_id;
     }
 
     @NonNull
@@ -30,26 +35,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Values data = valuesList.get(position);
-        holder.sp_id.setText(data.getS_pressure());
+        holder.sp_id.setText(String.valueOf(sp_id.get(position)));
+        holder.dp_id.setText(String.valueOf(dp_id.get(position)));
+        holder.bpm_id.setText(String.valueOf(bpm_id.get(position)));
+        holder.date_id.setText(String.valueOf(date_id.get(position)));
+        holder.time_id.setText(String.valueOf(time_id.get(position)));
+
         int temp = Integer.parseInt(holder.sp_id.getText().toString());
         if(temp<90 || temp>140){
             holder.sp_id.setTextColor(Color.RED);
         }
-        holder.dp_id.setText(data.getD_pressure());
+
         temp=Integer.parseInt(holder.dp_id.getText().toString());
         if(temp<60 || temp>90){
             holder.dp_id.setTextColor(Color.RED);
         }
-        holder.bpm_id.setText(data.getHeart_rate());
-        holder.date_id.setText(data.getDate());
+
 
 
     }
 
     @Override
     public int getItemCount() {
-        return valuesList.size();
+        return sp_id.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

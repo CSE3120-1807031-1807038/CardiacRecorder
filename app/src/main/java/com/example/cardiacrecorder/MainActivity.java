@@ -16,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button Add_new_record;
     RecyclerView recyclerView;
-    List<Values> valuesList;
+    ArrayList<String> sp,dp,bpm,date,time;
     Database DB;
     MyAdapter adapter;
 
@@ -25,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DB = new Database(this);
-        valuesList = new ArrayList<>();
+        sp = new ArrayList<>();
+        dp = new ArrayList<>();
+        bpm = new ArrayList<>();
+        date = new ArrayList<>();
+        time = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerview_mainpage);
-        adapter = new MyAdapter(this,valuesList);
+        adapter = new MyAdapter(this,sp,dp,bpm,date,time);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
@@ -42,14 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void displaydata() {
         Cursor cursor = DB.getdata();
-        if(cursor.moveToFirst()){
-            while(!cursor.isAfterLast()){
-                Values values = new Values(cursor.getString(1),cursor.getString(2),
-                        cursor.getString(3),cursor.getString(4),cursor.getString(5),cursor.getString(6));
-                valuesList.add(values);
-                cursor.moveToNext();
-            }
+        while(cursor.moveToNext()){
+            sp.add(cursor.getString(0));
+            dp.add(cursor.getString(1));
+            bpm.add(cursor.getString(2));
+            date.add(cursor.getString(3));
+            time.add(cursor.getString(4));
+
         }
-        cursor.close();
     }
 }
