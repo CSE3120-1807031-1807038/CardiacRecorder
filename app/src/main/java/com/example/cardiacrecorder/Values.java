@@ -65,4 +65,15 @@ public class Values {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public int compareTo(Values values) {
+        if(this.s_pressure.compareTo(values.s_pressure)==0){
+            if(this.d_pressure.compareTo(values.d_pressure)==0){
+                if(this.heart_rate.compareTo(values.heart_rate)==0){
+                    return 0;
+                }
+            }
+        }
+        return -1;
+    }
 }
