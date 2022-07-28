@@ -8,13 +8,14 @@ public class Values {
     String date;
     String time;
     public Values(){}
-    public Values(String s_pressure, String d_pressure, String heart_rate, String comment, String date, String time) {
+    public Values(String s_pressure, String d_pressure, String heart_rate,  String date, String time,String comment) {
         this.s_pressure = s_pressure;
         this.d_pressure = d_pressure;
         this.heart_rate = heart_rate;
-        this.comment = comment;
+
         this.date = date;
         this.time = time;
+        this.comment = comment;
     }
 
     public String getS_pressure() {

@@ -49,4 +49,12 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = DB.rawQuery("Select * from Userdetails",null);
         return cursor;
     }
+    public Cursor deletedata()
+    {
+        {
+            SQLiteDatabase DB = this.getWritableDatabase();
+            Cursor cursor = DB.rawQuery("delete from Userdetails",null);
+            return cursor;
+        }
+    }
 }

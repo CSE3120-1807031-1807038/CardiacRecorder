@@ -16,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button Add_new_record;
     RecyclerView recyclerView;
-    ArrayList<String> sp,dp,bpm,date,time;
+    ArrayList<String> sp,dp,bpm,date,time,comment;
     Database DB;
     MyAdapter adapter;
 
@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
         bpm = new ArrayList<>();
         date = new ArrayList<>();
         time = new ArrayList<>();
+        comment = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerview_mainpage);
-        adapter = new MyAdapter(this,sp,dp,bpm,date,time);
+        adapter = new MyAdapter(this,sp,dp,bpm,date,time,comment);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             bpm.add(cursor.getString(2));
             date.add(cursor.getString(3));
             time.add(cursor.getString(4));
+            comment.add(cursor.getString(5));
 
         }
     }
