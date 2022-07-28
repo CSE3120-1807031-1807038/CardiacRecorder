@@ -25,9 +25,20 @@ public class UITest {
     @Rule
     public ActivityTestRule<MainActivity> activityRule=
             new ActivityTestRule<>(MainActivity.class);
+
+    /**
+     * Tests if opening the app lands on home screen
+     */
     @Test
-    public void testAll(){
+    public void testHome(){
         onView(withId(R.id.Homepage)).check(matches(isDisplayed()));
+    }
+
+    /**
+     * Tests add button, adding new information, submit button
+     */
+    @Test
+    public void testAdd(){
         onView(withId(R.id.add_button)).perform(click());
         onView(withId(R.id.constraintLayout2)).check(matches(isDisplayed()));
         onView(withId(R.id.SP)).perform(ViewActions.typeText("81"));
