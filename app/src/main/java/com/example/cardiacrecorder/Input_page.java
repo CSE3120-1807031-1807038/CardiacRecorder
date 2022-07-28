@@ -29,6 +29,12 @@ public class Input_page extends AppCompatActivity {
     EditText time_in;
     Button Enter;
     Database DB;
+
+    /**
+     * this method will add fragment using recyclerview
+     * @param savedInstanceState
+     * takes bundle as parameter
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,9 @@ public class Input_page extends AppCompatActivity {
 
         DB = new Database(this);
 
+        /**
+         * Submit button for input page
+         */
         Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

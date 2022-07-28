@@ -19,9 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Starting_page"
-            android:exported="false" />
-        <activity
             android:name=".Detailed_info_page"
             android:exported="false" />
         <activity
