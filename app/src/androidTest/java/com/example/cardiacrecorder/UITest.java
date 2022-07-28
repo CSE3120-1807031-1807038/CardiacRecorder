@@ -18,10 +18,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * The type Ui test.
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 @LargeTest
 
 public class UITest {
+    /**
+     * The Activity rule.
+     */
     @Rule
     public ActivityTestRule<MainActivity> activityRule=
             new ActivityTestRule<>(MainActivity.class);
